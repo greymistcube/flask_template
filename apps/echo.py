@@ -1,5 +1,5 @@
-import flask
 import json
+import flask
 
 echo = flask.Blueprint(
     "echo",
