@@ -1,6 +1,5 @@
 import socket
 import flask
-from apps import nav
 
 messages = flask.Blueprint(
     "messages",
@@ -21,6 +20,5 @@ def run():
         template,
         title=title,
         hostname=hostname,
-        nav=nav.NAV,
         messages=messages,
     )

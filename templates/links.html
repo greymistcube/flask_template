@@ -30,11 +30,11 @@
         <main class="valign-wrapper">
             <div class="container">
                 <div class="section">
-                    {% for message in messages %}
+                    {% for address, name in links.items() %}
                     <div class="row center">
-                        <div id="message-button" class="btn-large waves-effect waves-light light-blue col s12 l6 offset-l3">
-                            {{ message }}
-                        </div>
+                        <a href={{ address }} id="link-button" class="btn-large waves-effect waves-light green col s12 l6 offset-l3">
+                            {{ name }}
+                        </a>
                     </div>
                     {% endfor %}
                 </div>
