@@ -19,14 +19,10 @@
         <header>
             <nav class="red" role="navigation">
                 <div class="nav-wrapper container">
-                    <a id="logo-container" href="#" class="brand-logo">{{ hostname }}</a>
-                    {% if nav is defined %}
+                    <a id="logo-container" href="#" class="brand-logo left">{{ hostname }}</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        {% for address, name in nav.items() %}
-                        <li><a href={{ address }}>{{ name }}</a></li>
-                        {% endfor %}
+                        <li><a href="../navigation/">Navigation</a></li>
                     </ul>
-                    {% endif %}
                 </div>
             </nav>
         </header>

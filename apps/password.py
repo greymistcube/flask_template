@@ -2,7 +2,7 @@
 
 import socket, hashlib
 import flask
-from apps import nav, cred, util
+from apps import cred, util
 
 password = flask.Blueprint(
     "password",
@@ -22,7 +22,6 @@ def run():
                 template_password,
                 title=title,
                 hostname=hostname,
-                nav=nav.NAV,
                 message=message,
             )
         else:
@@ -35,7 +34,6 @@ def run():
                 template_messages,
                 title=title,
                 hostname=hostname,
-                nav=nav.NAV,
                 messages=messages,
             )
     except:

@@ -1,6 +1,5 @@
 import socket
 import flask
-from apps import nav
 
 charts = flask.Blueprint(
     "charts",
@@ -52,6 +51,5 @@ def run():
         template,
         title=title,
         hostname=hostname,
-        nav=nav.NAV,
         charts=charts,
     )

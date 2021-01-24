@@ -1,6 +1,5 @@
 import socket
 import flask
-from apps import nav
 
 status = flask.Blueprint(
     "status",
@@ -17,6 +16,5 @@ def run():
         template,
         title=title,
         hostname=hostname,
-        nav=nav.NAV,
         messages=messages,
     )
