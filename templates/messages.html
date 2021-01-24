@@ -20,6 +20,13 @@
             <nav class="red" role="navigation">
                 <div class="nav-wrapper container">
                     <a id="logo-container" href="#" class="brand-logo">{{ hostname }}</a>
+                    {% if nav is defined %}
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        {% for address, name in nav.items() %}
+                        <li><a href={{ address }}>{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                 </div>
             </nav>
         </header>
