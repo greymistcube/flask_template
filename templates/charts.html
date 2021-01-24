@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <title>{{ title }}</title>
+
+        <!-- CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="{{ url_for('static', filename='materialize.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{{ url_for('static', filename='chartist.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{{ url_for('static', filename='style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        <!-- Scripts -->
+        <script src="{{ url_for('static', filename='materialize.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='chartist.min.js') }}"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav class="red" role="navigation">
+                <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">{{ hostname }}</a></div>
+            </nav>
+        </header>
+
+        <main class="valign-wrapper">
+            <div class="container">
+                {% for chart in charts %}
+                <div class="section">
+                    <div class="row center">
+                        <div id="message-button" class="btn-large waves-effect waves-light light-blue col s12 l6 offset-l3">
+                            {{ chart.name }}
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <div class="card col col s12 l6 offset-l3">
+                            <div class="ct-chart ct-octave" id="{{ chart.label }}">
+                                <script>
+                                    var data = {{ chart.data|tojson }};
+                                    var options = {{ chart.options|tojson }};
+                                    options.lineSmooth = Chartist.Interpolation.{{ chart.line_smooth }}({
+                                        fillHoles: true,
+                                    });
+                                    // Create a new line chart object where as first parameter we pass in a selector
+                                    // that is resolving to our chart container element. The Second parameter
+                                    // is the actual data object.
+                                    new Chartist.Line("{{ chart.container }}", data, options);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+
+        <footer class="page-footer white">
+            <div class="footer-copyright green">
+                <div class="container">
+                    Made by <a class="green-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

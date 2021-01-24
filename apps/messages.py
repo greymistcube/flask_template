@@ -9,8 +9,8 @@ messages = flask.Blueprint(
 @messages.route("/messages/", methods=["GET"])
 def run():
     template = "messages.html"
-    title = "Messages"
-    hostname = socket.gethostname().upper()
+    title = "Sample Messages"
+    hostname = socket.gethostname()
     messages = [
         "message one",
         "message two",

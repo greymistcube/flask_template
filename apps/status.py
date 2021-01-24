@@ -10,7 +10,7 @@ status = flask.Blueprint(
 def run():
     template = "messages.html"
     title = "Server Status"
-    hostname = socket.gethostname().upper()
+    hostname = socket.gethostname()
     messages = [f"{hostname} is up and running"]
     return flask.render_template(
         template,
