@@ -5,8 +5,8 @@
 [![materialize][materialize_img]][materialize_url]
 [![chartist][chartist_img]][chartist_url]
 
-A simple flask app. Used for testing basic server functionalities
-and as templates.
+A simple flask app. Used for testing basic server functionalities.
+Also used as a template for building other simple apps.
 
 [python_img]: https://img.shields.io/badge/python-3.7-blue.svg
 [python_url]: https://www.python.org/
