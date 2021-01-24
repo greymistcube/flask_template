@@ -2,17 +2,12 @@
 
 import socket, hashlib
 import flask
-from apps import nav, cred
+from apps import nav, cred, util
 
 password = flask.Blueprint(
     "password",
     __name__,
 )
-
-def sha256(message: str) -> str:
-    algo = hashlib.sha256()
-    algo.update(message.encode())
-    return algo.hexdigest()
 
 @password.route("/password/", methods=["GET", "POST"])
 def run():
@@ -31,7 +26,7 @@ def run():
                 message=message,
             )
         else:
-            password = sha256(flask.request.form["password"])
+            password = util.hash(flask.request.form["password"])
             if password == cred.PASSWORD:
                 messages = ["Password Confirmed"]
             else:
