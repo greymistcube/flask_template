@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <title>{{ title }}</title>
+
+        <!-- CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="{{ url_for('static', filename='materialize.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="{{ url_for('static', filename='style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">
+
+        <!-- Scripts -->
+        <script src="{{ url_for('static', filename='materialize.min.js') }}"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav class="red" role="navigation">
+                <div class="nav-wrapper container">
+                    <a id="logo-container" href="#" class="brand-logo">{{ hostname }}</a>
+                    {% if nav is defined %}
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        {% for address, name in nav.items() %}
+                        <li><a href={{ address }}>{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </nav>
+        </header>
+
+        <main class="valign-wrapper">
+            <div class="container">
+                <div class="section">
+                    {% for message in messages %}
+                    <div class="row center">
+                        <div id="message-button" class="btn-large waves-effect waves-light light-blue col s12 l6 offset-l3">
+                            {{ message }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </main>
+
+        <footer class="page-footer white">
+            <div class="container"></div>
+            <div class="footer-copyright green">
+                <div class="container">
+                    Made by <a class="green-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
