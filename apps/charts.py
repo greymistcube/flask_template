@@ -7,7 +7,14 @@ charts = flask.Blueprint(
 )
 
 class Chart:
-    def __init__(self, label, name, data, options, line_smooth):
+    def __init__(
+        self,
+        label: str,
+        name: str,
+        data: dict,
+        options: dict,
+        line_smooth: str,
+    ):
         self.label = label
         self.container = "#" + self.label
         self.name = name
@@ -25,14 +32,29 @@ def run():
     # generate charts
     labels = ["chart_one", "chart_two", "chart_three"]
     names = ["chart one", "chart two", "chart three"]
+    xs = [1, 2, 3, 4, 5]
+    ys = [1, 5, 1, 5, 1]
     data = {
-        "labels": [1, 2, 3, 4, 5],
-        "series": [[1, 5, 1, 5, 1]],
+        "series": [
+            {
+                "data": [
+                    {"x": x, "y": y} for x, y in zip(xs, ys)
+                ],
+            },
+        ],
     }
     options = {
-        "fullWidth": True,
+        "axisX": {
+            "low": 1,
+            "high": 5,
+            "ticks": [1, 2, 3, 4, 5],
+            "labels": ["a", "b", "c", "d", "e"],
+        },
         "axisY": {
-            "onlyInteger": True,
+            "low": 1,
+            "high": 5,
+            "ticks": [1, 2, 3, 4, 5],
+            "labels": [1, 2, 3, 3, 5],
         },
     }
     line_smooths = ["none", "step", "simple"]
