@@ -5,9 +5,12 @@
 [![materialize][materialize_img]][materialize_url]
 [![chartist][chartist_img]][chartist_url]
 
-![status](./docs/static/status.png)
+![server_status](./docs/static/server_status.png)
+![homeauto_history](./docs/static/homeauto_history.png)
 
-A simple flask app. Used for testing basic server functionalities.
+A simple flask app.
+
+Used for testing basic server functionalities.
 Also used as a template for building other simple apps.
 
 [python_img]: https://img.shields.io/badge/python-3.7-blue.svg
