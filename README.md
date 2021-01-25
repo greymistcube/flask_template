@@ -5,6 +5,8 @@
 [![materialize][materialize_img]][materialize_url]
 [![chartist][chartist_img]][chartist_url]
 
+![status](./docs/static/status.png)
+
 A simple flask app. Used for testing basic server functionalities.
 Also used as a template for building other simple apps.
 
