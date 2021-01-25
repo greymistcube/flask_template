@@ -54,10 +54,10 @@
                                     options.axisX.type = Chartist.FixedScaleAxis;
                                     options.axisY.type = Chartist.FixedScaleAxis;
                                     options.axisX.labelInterpolationFnc = function(value, index) {
-                                        return options.axisX.labels[index];
+                                        return {{ chart.options.axisX.labels|tojson }}[index];
                                     };
                                     options.axisY.labelInterpolationFnc = function(value, index) {
-                                        return options.axisY.labels[index];
+                                        return {{ chart.options.axisY.labels|tojson }}[index];
                                     };
                                     options.lineSmooth = Chartist.Interpolation.{{ chart.line_smooth }}({
                                         fillHoles: true
