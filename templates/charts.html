@@ -51,6 +51,14 @@
                                 <script>
                                     var data = {{ chart.data|tojson }};
                                     var options = {{ chart.options|tojson }};
+                                    options.axisX.type = Chartist.FixedScaleAxis;
+                                    options.axisY.type = Chartist.FixedScaleAxis;
+                                    options.axisX.labelInterpolationFnc = function(value, index) {
+                                        return options.axisX.labels[index];
+                                    };
+                                    options.axisY.labelInterpolationFnc = function(value, index) {
+                                        return options.axisY.labels[index];
+                                    };
                                     options.lineSmooth = Chartist.Interpolation.{{ chart.line_smooth }}({
                                         fillHoles: true
                                     });
