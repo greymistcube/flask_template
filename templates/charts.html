@@ -37,6 +37,7 @@
 
         <main class="valign-wrapper">
             <div class="container">
+                <div class="section"></div>
                 {% for chart in charts %}
                 <div class="section">
                     <div class="row center">
@@ -51,7 +52,7 @@
                                     var data = {{ chart.data|tojson }};
                                     var options = {{ chart.options|tojson }};
                                     options.lineSmooth = Chartist.Interpolation.{{ chart.line_smooth }}({
-                                        fillHoles: true,
+                                        fillHoles: true
                                     });
                                     // Create a new line chart object where as first parameter we pass in a selector
                                     // that is resolving to our chart container element. The Second parameter
