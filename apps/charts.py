@@ -49,6 +49,7 @@ def run():
 
     return flask.render_template(
         template,
+        depth=1,
         title=title,
         hostname=hostname,
         charts=charts,

@@ -1,3 +1,4 @@
+# relative addresses from navigation page
 SITEMAP = {
     "../status/": "status",
     "../messages/": "messages",

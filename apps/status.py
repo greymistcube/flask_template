@@ -14,6 +14,7 @@ def run():
     messages = [f"{hostname} is up and running"]
     return flask.render_template(
         template,
+        depth=1,
         title=title,
         hostname=hostname,
         messages=messages,

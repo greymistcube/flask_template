@@ -15,6 +15,7 @@ def run():
     links = sitemap.SITEMAP
     return flask.render_template(
         template,
+        depth=1,
         title=title,
         hostname=hostname,
         links=links,
