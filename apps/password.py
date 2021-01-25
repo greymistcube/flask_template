@@ -33,6 +33,7 @@ def run():
                 messages = ["Password Denied"]
             return flask.render_template(
                 template_messages,
+                depth=1,
                 title=title,
                 hostname=hostname,
                 messages=messages,
