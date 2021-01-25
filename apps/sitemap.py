@@ -1,5 +1,5 @@
 SITEMAP = {
-    "../status/": "stats",
+    "../status/": "status",
     "../messages/": "messages",
     "../password/": "password",
     "../links/": "links",
