@@ -20,6 +20,7 @@ def run():
             message = "Enter Password"
             return flask.render_template(
                 template_password,
+                depth=1,
                 title=title,
                 hostname=hostname,
                 message=message,
