@@ -5,4 +5,5 @@ SITEMAP = {
     "../password/": "password",
     "../charts/": "charts",
     "../links/": "links",
+    "../buttons/": "buttons",
 }
