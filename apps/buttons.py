@@ -46,4 +46,3 @@ def run():
         hostname=hostname,
         buttons=BUTTONS,
     )
-    return
